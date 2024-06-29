@@ -1,0 +1,7 @@
+black : #090A0C
+light Black : 5C5C5C
+grey : 9F9F9F
+Dark Green : #3B5015
+white : #F0EFF0
+Light Green : #A4EE0E
+mid Green : #718944

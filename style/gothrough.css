@@ -1,0 +1,233 @@
+/* ------GoThrough Section-------- */
+.gothrough-container {
+  width: 500vw;
+  height: 100vh;
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: var(--primary-black);
+  z-index: 5;
+  overflow: hidden;
+  scroll-behavior: 0.5;
+  /* border: 2px solid red; */
+}
+
+.panel {
+  width: 100vw;
+  /* border: 2px solid red; */
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.float-gothrough {
+  /* border: 2px solid red; */
+  position: absolute;
+  top: 0;
+  left: 2%;
+  z-index: 20;
+  width: 600px;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.float-gothrough img {
+  width: 550px;
+  height: 600px;
+  object-fit: contain;
+  /* border: 2px solid red; */
+}
+
+.gothrough-container .panel-content span {
+  color: var(--yellow);
+}
+/* ----panel contents */
+
+.panel-1 {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.panel-1 #bg-taxi {
+  position: absolute;
+  /* border: 2px solid red; */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  left: -40%;
+}
+.panel-1 .panel-content {
+  color: var(--font-white);
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  text-align: center;
+  row-gap: 1rem;
+  padding-left: 2rem;
+  font-size: 4rem;
+  /* border: 2px solid red; */
+}
+
+.panel-1 .panel-content img {
+  width: 100px;
+  height: 100px;
+  margin-left: 8rem;
+  margin-top: 1rem;
+  /* border: 2px solid red; */
+}
+
+/* panel-2 */
+.panel-2 {
+  /* border: 2px solid red; */
+}
+
+.panel-2 .panel-content,
+.panel-4 .panel-content,
+.panel-5 .panel-content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--font-white);
+  /* border: 2px solid red; */
+  position: relative;
+}
+
+.panel-2 .panel-content h1,
+.panel-4 .panel-content h1,
+.panel-5 .panel-content h1 {
+  font-size: 4rem;
+}
+
+.panel-2 img {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid var(--yellow);
+  position: absolute;
+  bottom: 15%;
+  right: 25%;
+}
+
+/* panel-3 */
+
+
+.panel-3 .panel-content {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  color: var(--font-white);
+  /* border: 2px solid red; */
+  position: relative;
+}
+.panel-3 .ride-type {
+  /* border: 2px solid red; */
+  width: 70%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 3rem;
+}
+.panel-3 .ride-type img {
+  /* border: 2px solid var(--yellow); */
+  width: 70px;
+  height: 70px;
+  padding: 0.5rem;
+  border-radius: 20px;
+  background-color: var(--font-white);
+  box-shadow: 0px 0px 5px 2px var(--yellow);
+}
+.panel-3 .ride-type p {
+  width: 80%;
+  min-width: 40%;
+  text-wrap: wrap;
+  text-align: justify;
+  /* border: 2px solid red; */
+}
+
+/* ----step precoess navigation */
+.step-progress {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* border: 2px solid red; */
+  width: 70%;
+  position: absolute;
+  top: 15%;
+}
+
+.step-progress .step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 3px solid var(--font-white);
+  background-color: transparent;
+  color: var(--font-white);
+  font-size: 2rem;
+  position: relative;
+}
+.step-progress .fix {
+  flex: 0 0 auto;
+}
+
+.step-progress .step-track {
+  width: 100%;
+  background-color: var(--font-white);
+  border: 2px solid var(--font-white);
+}
+.step-progress .step-track.active {
+  background-color: var(--yellow);
+  border: 2px solid var(--yellow);
+}
+.step-progress .step.active {
+  border-color: var(--yellow);
+  background-color: var(--yellow);
+  color: var(--font-white);
+}
+
+/* .step-progress .step::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -183.5%;
+  width: 6.5vw;
+  height: 4px;
+  background-color: var(--font-white);
+} */
+
+.step-progress .step:first-child::before {
+  content: none;
+}
+
+.step-progress .step.active::before {
+  background-color: var(--yellow);
+}
+
+/* --content animation */
+.animation {
+  animation: fade-animation 0.5s linear forwards;
+}
+.panel {
+  opacity: 0;
+}
+@keyframes fade-animation {
+  to {
+    opacity: 1;
+  }
+}
