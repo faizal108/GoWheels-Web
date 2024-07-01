@@ -673,14 +673,18 @@ nav {
     width: 100%;
     align-items: center;
   }
-
+  .col-1 .col-row-1 {
+    font-size: 1rem;
+  }
   .col-1 .col-row-2 {
     text-align: center;
     padding-right: 0;
+    font-size: 3rem;
     /* border: 2px solid red; */
   }
 
   .col-1 .col-row-3 {
+    font-size: 0.9rem;
     text-align: center;
     padding-right: 0;
   }
@@ -724,5 +728,18 @@ nav {
 
   .col-2 .box-2 {
     left: 10px;
+  }
+
+
+  .col-1 .col-row-1 {
+    font-size: 0.8rem;
+  }
+  .col-1 .col-row-2 {
+
+    font-size: 2.5rem;
+  }
+
+  .col-1 .col-row-3 {
+    font-size: 0.7rem;
   }
 }
