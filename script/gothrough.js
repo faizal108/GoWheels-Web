@@ -41,10 +41,11 @@ let images = [
   "./assets/login.png",
   "./assets/home-page.png",
   "./assets/Booking.png",
-  "./assets/History.png"
+  "./assets/History.png",
 ];
 
 let currentPanel = 0; // Track current panel index
+ // Ensure your sections are correctly selected
 
 let scrollTween = gsap.to(sections, {
   xPercent: -100 * (sections.length - 1),
@@ -52,51 +53,49 @@ let scrollTween = gsap.to(sections, {
   scrollTrigger: {
     trigger: ".gothrough-container",
     pin: true,
-    scrub: true, // Increase scrub speed
+    scrub: true,
     snap: {
-      snapTo: 1 / (sections.length - 1), // Snap to the closest section
-      duration: 0.2, // Reduce snap duration
-      ease: "power1.inOut" // Optional: adjust easing for snap
+      snapTo: 1 / (sections.length - 1),
+      duration: 0.2,
+      ease: "power1.inOut"
     },
     onUpdate: (self) => {
       let progress = self.progress;
-      let panelIndex = Math.round(progress * (sections.length - 1)); // Determine current panel index
+      let panelIndex = Math.round(progress * (sections.length - 1));
 
-      // Change image only if panel index changes
+      if (panelIndex < sections.length - 1) {
+        self.vars.snap = false;
+      } else {
+        self.vars.snap = {
+          snapTo: 1 / (sections.length - 1),
+          duration: 0.2,
+          ease: "power1.inOut"
+        };
+      }
+
       if (panelIndex !== currentPanel) {
         currentPanel = panelIndex;
         let floatGoThrough = document.querySelector(".float-gothrough");
 
         if (panelIndex === 0) {
-          // Remove the image if panel index is 0
           let img = document.getElementById("dynamicImage");
           if (img) {
             img.remove();
           }
         } else {
-          // Add the image if panel index is not 0
-          if (!document.getElementById("dynamicImage")) {
-            let img = document.createElement("img");
+          let img = document.getElementById("dynamicImage");
+          if (!img) {
+            img = document.createElement("img");
             img.id = "dynamicImage";
-            img.src = images[currentPanel];
             floatGoThrough.appendChild(img);
-            // Fade in the new image
-            gsap.fromTo(img, { opacity: 0 }, { opacity: 1, duration: 0.1 });
-          } else {
-            let img = document.getElementById("dynamicImage");
-            let tl = gsap.timeline();
-            // Simultaneously fade out the old image and change the src
-            tl.add(() => {
-                img.src = images[currentPanel];
-              })
-              .to(img, { opacity: 1, duration: 0.1 });
           }
+          img.src = images[panelIndex];
+          gsap.fromTo(img, { opacity: 0 }, { opacity: 1, duration: 0.1 });
         }
       }
     },
-    end: () =>
-      "+=" + document.querySelector(".gothrough-container").offsetWidth,
-  },
+    end: "+=" + document.querySelector(".gothrough-container").offsetWidth
+  }
 });
 
 
@@ -154,12 +153,24 @@ if (document.querySelector(".about-section")) {
       scrub: true,
     },
   });
+
+  // Center Service Text Animation
+  gsap.fromTo(".center-ser", 
+    { opacity: 0 },  // Start from opacity 0
+    { 
+      opacity: 1,   // End at opacity 1
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".center-ser",
+        start: "top 80%",  // Start the animation when the top of the element is at 50% of the viewport
+        end: "top 50%",    // End the animation when the top of the element is at 25% of the viewport
+        scrub: true,
+      },
+    }
+  ); 
 }
 
-
-
 // top wave path following
-
 
 // gsap.to("#floatingImg", {
 //   duration: 10,
@@ -173,17 +184,15 @@ if (document.querySelector(".about-section")) {
 //   }
 // });
 
-
-
 // content animation
 
 // Function to handle when an observed element enters or leaves the viewport
 function handleIntersection(entries, observer) {
-  entries.forEach(entry => {
+  entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('animation'); // Add 'animate' class to start animation
+      entry.target.classList.add("animation"); // Add 'animate' class to start animation
     } else {
-      entry.target.classList.remove('animation'); // Remove 'animate' class to reset animation
+      entry.target.classList.remove("animation"); // Remove 'animate' class to reset animation
     }
   });
 }
@@ -191,11 +200,11 @@ function handleIntersection(entries, observer) {
 // Create an IntersectionObserver instance
 const observer = new IntersectionObserver(handleIntersection, {
   root: null, // viewport
-  threshold: 0.8
+  threshold: 0.8,
 });
 
 // Observe the element
-const animatedElements = document.querySelectorAll('.panel');
-animatedElements.forEach(element => {
+const animatedElements = document.querySelectorAll(".panel");
+animatedElements.forEach((element) => {
   observer.observe(element);
 });
