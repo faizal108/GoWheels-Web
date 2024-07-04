@@ -101,9 +101,9 @@
   position: relative;
 }
 
-.panel-2 .panel-content h1,
-.panel-4 .panel-content h1,
-.panel-5 .panel-content h1 {
+.panel-2 .panel-content h2,
+.panel-4 .panel-content h2,
+.panel-5 .panel-content h2 {
   font-size: 4rem;
 }
 
@@ -244,9 +244,9 @@
     height: 90%;
   }
 
-  .panel-2 .panel-content h1,
-  .panel-4 .panel-content h1,
-  .panel-5 .panel-content h1 {
+  .panel-2 .panel-content h2,
+  .panel-4 .panel-content h2,
+  .panel-5 .panel-content h2 {
     font-size: 3rem;
   }
 
@@ -287,17 +287,6 @@
   .panel-1 .panel-content img {
     width: 60px;
     height: 60px;
-    /* border: 2px solid red; */
-  }
-
-
-  .panel-2 {
-    /* border: 2px solid red; */
-  }
-  
-  .panel-2 .panel-content,
-  .panel-4 .panel-content,
-  .panel-5 .panel-content {
     /* border: 2px solid red; */
   }
   
@@ -400,10 +389,10 @@
     padding: 2rem 1rem;
   }
   
-  .panel-2 .panel-content h1,
-  .panel-3 .panel-content h1,
-  .panel-4 .panel-content h1,
-  .panel-5 .panel-content h1 {
+  .panel-2 .panel-content h2,
+  .panel-3 .panel-content h2,
+  .panel-4 .panel-content h2,
+  .panel-5 .panel-content h2 {
     font-size: 2.75rem;
   }
 
@@ -438,9 +427,9 @@
 
 /* ---small mobile--- */
 @media screen and (max-width: 380px) {
-  .panel-2 .panel-content h1,
-  .panel-4 .panel-content h1,
-  .panel-5 .panel-content h1 {
+  .panel-2 .panel-content h2,
+  .panel-4 .panel-content h2,
+  .panel-5 .panel-content h2 {
     font-size: 2.2rem;
   }
 

@@ -86,8 +86,14 @@
   box-shadow: 0 0.5rem 1rem -0.25rem #16161650;
 }
 
-
-
+.testimonial > h1 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 4rem;
+  color: var(--font-white);
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+}
 /* ----card---- */
 
 .card {
@@ -113,7 +119,6 @@
   border-radius: 9999px;
   background-color: royalblue;
   overflow: hidden;
-
 }
 
 .header .image img {
@@ -156,6 +161,48 @@
   border: 2px solid var(--yellow);
   background-color: var(--primary-black);
 }
-.card:hover > .message , .card:hover .name {
+.card:hover > .message,
+.card:hover .name {
   color: var(--font-white);
+}
+
+@media screen and (max-width: 768px) {
+  .card {
+    padding: 1rem;
+    width: 280px;
+  }
+
+  .header {
+    display: flex;
+    align-items: center;
+    grid-gap: 1rem;
+    gap: 1rem;
+  }
+
+  .header .image {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .stars svg {
+    height: 0.8rem;
+    width: 0.8rem;
+  }
+
+  .name {
+    margin-top: 0.25rem;
+    font-size: 1rem;
+  }
+
+  .message {
+    margin-top: 0.5rem;
+    font-size: 0.8rem;
+    text-align: justify;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .testimonial > h1 {
+    font-size: 1.5rem;
+  }
 }

@@ -754,4 +754,19 @@ nav {
   .col-1 .col-row-3 {
     font-size: 0.7rem;
   }
+
+
+
+
+    /* footer */
+
+    .footer-content {
+      padding: 20px 5px;
+      font-size: 0.8rem;
+    }
+    
+    .footer-content a {
+      display: block;
+      text-align: right;
+    }
 }
