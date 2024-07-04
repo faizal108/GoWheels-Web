@@ -1,9 +1,9 @@
 .about-section {
-    width: 100vw;
-    height: 120vh;
-    background-color: var(--yellow);
-    position: relative;
-    /* border: 2px solid red; */
+  width: 100vw;
+  height: 120vh;
+  background-color: var(--yellow);
+  position: relative;
+  /* border: 2px solid red; */
 }
 /* 
 .about-section .wave-top {
@@ -14,20 +14,17 @@
 } */
 
 .about-section svg {
-    position: absolute;
-    top: -50px;
-    z-index: 4;
+  position: absolute;
+  top: -50px;
+  z-index: 4;
 }
-
 
 /* taxi aniamtion */
 .about-section #float-taxi {
-    position: absolute;
-    bottom: -1px;
-    width: 200px;
+  position: absolute;
+  bottom: -1px;
+  width: 200px;
 }
-
-
 
 /* ----About----- */
 
@@ -69,7 +66,6 @@
   column-gap: 10px;
 }
 
-
 .button {
   cursor: pointer;
   width: 40px;
@@ -92,7 +88,7 @@
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   /* border: 2px solid red; */
 }
 
@@ -143,7 +139,6 @@
   line-height: 1.5rem;
 }
 
-
 .service-cards {
   width: 60%;
   /* border: 2px solid red; */
@@ -152,7 +147,7 @@
   justify-content: center;
 
   flex-direction: column;
-  
+
   column-gap: 2rem;
   row-gap: 1rem;
   position: absolute;
@@ -166,7 +161,7 @@
   /* width: 100%; */
   width: 50%;
   height: fit-content;
-  padding: 0.8rem;
+  padding: 0.8rem 1rem;
 
   background: var(--primary-black);
   box-shadow: 12px 17px 51px rgba(215, 215, 215, 0.414);
@@ -185,27 +180,25 @@
   /* border: 2px solid red; */
 }
 
-.ser-card:nth-child(1){
+.ser-card:nth-child(1) {
   align-self: flex-start;
 }
-.ser-card:nth-child(2){
+.ser-card:nth-child(2) {
   align-self: flex-end;
 }
-.ser-card:nth-child(3){
+.ser-card:nth-child(3) {
   align-self: flex-start;
 }
-.ser-card h1 {
+.ser-card h2 {
   align-self: flex-start;
   color: var(--yellow);
   font-size: 1.5rem;
-  padding-left: 1rem;
 }
 .ser-card p {
   text-align: left;
   font-size: 1rem;
   color: var(--font-white);
   text-overflow: ellipsis;
-  padding-left: 1rem;
 }
 
 .ser-card:hover {
@@ -220,7 +213,7 @@
   position: absolute;
   top: 58%;
   left: 4%;
-  transform: translate(0%,-50%);
+  transform: translate(0%, -50%);
   z-index: 2;
 }
 
@@ -232,12 +225,228 @@
 }
 
 .border-text::before {
-  content: 'SERVICES';
+  content: "SERVICES";
   position: absolute;
   left: 0;
   top: 0;
   z-index: -1;
   color: transparent;
   -webkit-text-stroke: 2px var(--font-white);
-  text-stroke: 2px var(--font-white); 
+}
+
+@media screen and (max-width: 1300px) {
+  .about-section {
+    height: fit-content;
+    padding: 7.5rem 0;
+  }
+  /* wave top */
+  .about-section > svg {
+    position: absolute;
+    top: -40px;
+    z-index: 4;
+  }
+
+  /* taxi aniamtion */
+  .about-section #float-taxi {
+    position: absolute;
+    bottom: -1px;
+    width: 150px;
+  }
+
+  .float-about {
+    /* border: 2px solid red; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-left: 0rem;
+  }
+  .about-left {
+    width: 60%;
+    /* border: 2px solid red; */
+    align-items: center;
+    position: relative;
+    justify-content: space-between;
+  }
+
+  .about-left .center-logo {
+    /* border: 2px solid red; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-left .center-logo h2 {
+    font-size: 4rem;
+    color: var(--font-white);
+    font-weight: 600;
+    /* border: 2px solid red; */
+  }
+
+  .about-desc {
+    /* border: 2px solid red; */
+    text-align: center;
+    line-height: 1.8rem;
+    font-size: 1.2rem;
+  }
+
+  .about-left .center-social {
+    /* border: 2px solid red; */
+    width: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: 20px;
+  }
+
+  .button {
+    width: 45px;
+    height: 45px;
+  }
+  .button svg {
+    color: white;
+    width: 30px;
+    height: 30px;
+  }
+
+  .button::before {
+    width: 45px;
+    height: 45px;
+  }
+
+  .service-cards {
+    width: 95%;
+    position: relative;
+    /* border: 2px solid red; */
+    left: 0;
+  }
+  
+  .ser-card {
+    padding: 0.5rem 1rem;
+    /* border: 2px solid red; */
+  }
+  
+}
+
+/* ----Tablet---- */
+@media screen and (max-width: 768px) {
+  .about-left {
+    width: 95%;
+  }
+
+  /* wave top */
+  .about-section > svg {
+    position: absolute;
+    top: -10px;
+    z-index: 4;
+  }
+
+  /* taxi aniamtion */
+  .about-section #float-taxi {
+    position: absolute;
+    bottom: -1px;
+    width: 150px;
+  }
+
+
+  .ser-card h2 {
+    font-size: 1.5rem;
+  }
+  .ser-card p {
+    font-size: 0.9rem;
+  }
+
+  .center-ser {
+    left: 4%;
+  }
+  
+  .border-text {
+    font-size: 4rem;
+  }
+}
+
+@media screen and (max-width: 660px) {
+  .service-cards {
+    width: 95%;
+    row-gap: 1rem;
+  }
+  
+  .ser-card {
+    width: 60%;
+  }
+  
+  .ser-card h2 {
+    font-size: 1.2rem;
+  }
+  .ser-card p {
+    font-size: 0.8rem;
+  }
+
+  .center-ser {
+    left: 0%;
+  }
+  
+  .border-text {
+    font-size: 3rem;
+  }
+}
+
+@media screen and (max-width: 570px) { 
+  .ser-card {
+    width: 100%;
+  }
+  .service-cards {
+    padding-top: 10rem;
+  }
+  .center-ser {
+    top: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .border-text {
+    font-size: 5rem;
+  }
+}
+
+@media screen and (max-width: 375px) {
+
+  .about-left {
+    width: 95%;
+  }
+
+  /* taxi aniamtion */
+  .about-section #float-taxi {
+    width: 100px;
+  }
+
+  .about-left .center-logo h2 {
+    font-size: 3rem;
+    font-weight: 500;
+  }
+
+  .about-desc {
+    line-height: 1.5rem;
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  .button {
+    width: 35px;
+    height: 35px;
+  }
+  .button svg {
+    color: white;
+    width: 20px;
+    height: 20px;
+  }
+
+  .button::before {
+    width: 35px;
+    height: 35px;
+  }
+
+  .border-text {
+    font-size: 4rem;
+  }
 }
